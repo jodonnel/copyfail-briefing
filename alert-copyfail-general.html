@@ -144,9 +144,11 @@
   }
   @media print {
     body { background: var(--bg); color: var(--text); padding: 0; max-width: none; }
-    h2 { page-break-after: avoid; }
-    table, .box, pre { page-break-inside: avoid; }
-    .stat-row { page-break-inside: avoid; }
+    h1, h2 { page-break-after: avoid; }
+    h2 { page-break-before: auto; }
+    table, .box, pre, .stat-row, ul, ol { page-break-inside: avoid; }
+    li { page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
   }
   @media (max-width: 600px) {
     body { padding: 1rem; font-size: 15px; }

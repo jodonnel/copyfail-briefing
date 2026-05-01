@@ -177,8 +177,10 @@
   }
   @media print {
     body { padding: 0; max-width: none; }
-    h2 { page-break-after: avoid; }
-    table, .callout, pre { page-break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; }
+    table, .callout, pre, ul, ol, .box { page-break-inside: avoid; }
+    li { page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
   }
 </style>
 </head>
