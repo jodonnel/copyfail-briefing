@@ -228,6 +228,22 @@ dracut -f   # RHEL/Fedora — rebuild initramfs</code></pre>
 
 <p>Edge devices running mainstream Linux kernels (NVIDIA Jetson, industrial gateways, AI inference appliances) are exposed and face compounding risk factors: slow vendor patch cycles, no runtime security monitoring, and the &ldquo;local&rdquo; attack vector is more achievable when devices are physically accessible or running exposed services.</p>
 
+<h2>Home Users and Consumer Linux Appliances</h2>
+
+<p>This is not just a server problem. If you run Linux at home, you may be affected:</p>
+
+<ul>
+  <li><strong>NAS devices</strong> (Synology, QNAP, TrueNAS) &mdash; full Linux kernels, often unpatched for months after disclosure</li>
+  <li><strong>Home routers</strong> running OpenWrt, DD-WRT, or vendor Linux &mdash; depends on whether <code>CONFIG_CRYPTO_USER_API_AEAD</code> is enabled in the build</li>
+  <li><strong>Raspberry Pi</strong> and single-board computers &mdash; Raspberry Pi OS ships mainstream kernels in the vulnerable range</li>
+  <li><strong>Smart home hubs</strong> and media servers running full Linux distributions</li>
+  <li><strong>Steam Deck</strong> and other Linux-based gaming/consumer devices</li>
+</ul>
+
+<div class="box warning">
+  <strong>The home user problem:</strong> There is no SELinux, no seccomp policy, no fleet management, and no security team. Home users depend entirely on their vendor shipping a firmware or kernel update &mdash; and for many consumer Linux appliances, that update may never come. If your device runs kernel 4.14 <em>or later</em> and has the crypto API enabled, the only real mitigation is the vendor patch. <strong>Check your vendor&rsquo;s security advisories and update as soon as a fix is available.</strong>
+</div>
+
 <h2>References</h2>
 
 <ul>
